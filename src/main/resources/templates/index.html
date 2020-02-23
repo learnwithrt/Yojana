@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="description" name="description">
+<meta name="google" content="notranslate" />
+<meta content="Rahul Talreja, India" name="author">
+
+<!-- Disable tap highlight on IE -->
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="apple-touch-icon" sizes="180x180" type="image/png"
+	href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/images/favicon-16x16.png">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimal-ui">
+<title>Yojana-Let's Plan</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body class="back-pic">
+	<div class="bg-color">
+		<header class="site-header container animated fadeInDown">
+			<div class="header-wrapper">
+				<div class="row">
+					<div class="col-md-4">
+						<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;<span id="appName">Yojana</span></span>
+						<div class="site-branding" id="logo">
+							<a href="index.html"> <img src="images/logo.png" alt="Yojana"
+								class="logo">
+							</a>
+						</div>
+						<div class="col-md-4">
+							<div class="user_info" id="sign_user">
+								<a href="profile-${userName}.html"> <th:block
+										xmlns:th="http://www.thymeleaf.org">
+										<span th:text="${userName}">User</span>
+									</th:block>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div id="homeSidenav" class="sidenav">
+							<a href="javascript:void(0)" class="closebtn"
+								onclick="closeNav()">&times;</a> <a href="index.html"
+								class="active">Home</a> <a href="login.html">Login</a> <a
+								href="signup.html">Sign Up</a> 
+								<!-- <a href="about.html">About</a> <a
+								href="contact.html">Contact</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="menu-container">
+			<div id="menu-1" class="homepage home-section container">
+				<div class="home-intro text-center">
+					<h2 class="welcome-title animated fadeInLeft">Yojana- Let's
+						Plan</h2>
+					<p class="animated fadeInRight">
+						<th:block xmlns:th="http://www.thymeleaf.org">
+						Welcome to <span th:text="${appName}">Yojana</span>
+						</th:block>
+						Created by <a href="http://www.rahultalreja.in">Rahul Talreja</a>,
+						<span class="blue">Yojana</span> is your day to day Project
+						Manager. It let's you plan your project into tasks and allocate
+						tasks to your team members. It helps you monitor the progress and
+						keep your project within budget and meet the deadline.
+					</p>
+				</div>
+			</div>
+		</div>
+		<footer class="footer text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-footer">
+						<ul class="social">
+							<li><a href="https://www.facebook.com/rahuldtalreja">Facebook</a></li>
+							<li><a href="https://www.twitter.com/rahuldtalreja">Twitter</a></li>
+							<li><a href="https://www.instagram.com/rahuldtalreja/">Instagram</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 copyright">
+					<p>
+						Copyright &copy; 2019 <a href="http://www.rahultalreja.in">Rahul
+							Talreja</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

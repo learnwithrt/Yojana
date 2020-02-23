@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="description" name="description">
+<meta name="google" content="notranslate" />
+<meta content="Rahul Talreja, India" name="author">
+
+<!-- Disable tap highlight on IE -->
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="apple-touch-icon" sizes="180x180" type="image/png"
+	href="/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/images/favicon-16x16.png">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, minimal-ui">
+<title>Yojana-Let's Plan</title>
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body class="back-pic">
+	<div class="bg-color">
+		<header class="site-header container animated fadeInDown">
+			<div class="header-wrapper">
+				<div class="row">
+					<div class="col-md-4">
+						<span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;<span
+							id="appName">Yojana</span></span>
+						<div class="site-branding" id="logo">
+							<a href="index.html"> <img src="images/logo.png" alt="Yojana"
+								class="logo">
+							</a>
+						</div>
+						<div class="col-md-4">
+							<div class="user_info" id="sign_user">
+								<a href="profile-${userName}.html"> <th:block
+										xmlns:th="http://www.thymeleaf.org">
+										<span th:text="${userName}">User</span>
+									</th:block>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div id="homeSidenav" class="sidenav">
+							<a href="javascript:void(0)" class="closebtn"
+								onclick="closeNav()">&times;</a> <a href="index.html">Home</a>
+							<a href="login.html">Login</a> <a href="signup.html"
+								class="active">Sign Up</a> 
+								<!-- <a href="about.html">About</a> <a
+								href="contact.html">Contact</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div id="login-container">
+			<div id="menu-1" class="homepage home-section container">
+				<div class="modal-dialog regForm" >
+					<div class="modal-content">
+						<div class="modal-heading">
+							<h2 class="text-center">Register</h2>
+						</div>
+						<hr />
+						<div class="modal-body">
+							<form role="form" method="post" id="resgistrationForm" action="registerUser.html" enctype="multipart/form-data">
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"> <span
+											class="glyphicon glyphicon-user"></span>
+										</span> <input type="text" class="form-control"
+											placeholder="User Name" id="user_id" name="user_id" onkeyup="changeIdColor()"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"> <span
+											class="glyphicon glyphicon-user"></span>
+										</span> <input type="text" class="form-control"
+											placeholder="Full Name" id="user_name" name="user_name" onkeyup="changeNameColor()"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"> <span
+											class="glyphicon glyphicon-lock"></span>
+										</span> <input type="password" class="form-control"
+											placeholder="Password" id="user_pwd" name="user_pwd" onkeyup="changePasswordColor()"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"> <span
+											class="glyphicon glyphicon-lock"></span>
+										</span> <input type="password" class="form-control"
+											placeholder="Confirm Password" id="cnf_user_pwd" name="cnf_user_pwd" onkeyup="changeConfirmPasswordColor()"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon">@</span> <input
+											type="email" class="form-control" placeholder="E-Mail Address" id="user_mail" name="user_mail" onkeyup="changeEmailColor()">
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group" id="genderDiv">
+										<span class="input-group-addon" id="manSpan"> <span
+											class="glyphicon" ><img src="images/man.png" class="icon-gender"/></span>
+										</span> <input type="radio" name="gender" class="form-control"
+											id="man" value="M" onchange="changeBackground()"/>
+										<span class="input-group-addon" id="womanSpan"> <span
+											class="glyphicon" ><img src="images/woman.png" class="icon-gender"/></span>
+										</span> <input type="radio" name="gender" class="form-control"
+											id="woman" value="F" onchange="changeBackground()"/>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"> <span
+											class="glyphicon glyphicon-picture"></span>
+										</span> <input type="file" accept="image/gif, image/jpeg,image/png" class="form-control"
+											placeholder="User Picture" id="user_pic" name="user_pic"/>
+									</div>
+								</div>
+								<div class="form-group text-center">
+									<button type="button" class="btn btn-success btn-lg" onClick="registerUser()">Register</button>
+									<a href="login.html" class="btn btn-link">Sign In</a>
+								</div>
+							</form>
+							<span id="requiredMessage">Please fill in the fields highlighted in red.</span>
+							<span id="errorMessage">Snap! Seems like the registration didn't go through</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<footer class="footer text-center">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-footer">
+						<ul class="social">
+							<li><a href="https://www.facebook.com/rahuldtalreja">Facebook</a></li>
+							<li><a href="https://www.twitter.com/rahuldtalreja">Twitter</a></li>
+							<li><a href="https://www.instagram.com/rahuldtalreja/">Instagram</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 copyright">
+					<p>
+						Copyright &copy; 2019 <a href="http://www.rahultalreja.in">Rahul
+							Talreja</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#requiredMessage").hide();
+			$("#errorMessage").hide();
+		});
+	</script>
+</body>
+</html>
